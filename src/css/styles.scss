@@ -1,5 +1,4 @@
 body {
-  font-family: Arial;
   padding: 20px;
   background: #f1f1f1;
 }
@@ -10,14 +9,13 @@ body {
   background: white;
 
   &__title-link {
-    color: #000000;
+    color: #000;
     font-size: 40px;
     text-decoration: none;
   }
 }
 
 main {
-
   .left-col {
     float: left;
     width: 75%;
@@ -29,7 +27,7 @@ main {
     padding-left: 20px;
   }
 
-  &:after {
+  &::after {
     content: "";
     display: table;
     clear: both;
@@ -39,7 +37,6 @@ main {
     background-color: white;
     padding: 10px;
     margin-top: 20px;
-    padding: 10px;
 
     &__link {
       font-size: 30px;
@@ -51,7 +48,6 @@ main {
     padding: 10px;
     margin-top: 20px;
     text-decoration: none;
-    padding: 10px;
     margin-bottom: 40px;
 
     &__title {
@@ -74,7 +70,7 @@ main {
       display: block;
       margin-top: 10px;
 
-      &[type=submit] {
+      &[type="submit"] {
         cursor: pointer;
       }
     }
@@ -85,7 +81,6 @@ main {
     padding: 10px;
     margin-top: 20px;
     text-decoration: none;
-    padding: 10px;
     margin-bottom: 40px;
 
     &__title {
@@ -102,7 +97,7 @@ main {
       width: 100%;
       height: 200px;
       padding: 20px;
-      margin: 20px 0 20px 0;
+      margin: 20px 0;
     }
 
     &__text {
@@ -118,7 +113,6 @@ main {
     padding: 10px;
     margin-top: 20px;
     text-decoration: none;
-    padding: 10px;
     margin-bottom: 40px;
     text-align: center;
 
@@ -132,7 +126,6 @@ main {
     padding: 10px;
     margin-top: 20px;
     text-decoration: none;
-
     margin-bottom: 40px;
 
     &__title {
@@ -166,10 +159,10 @@ main {
     margin-top: 20px;
     display: block;
     text-decoration: none;
-    color: #000000;
+    color: #000;
 
     &:hover {
-      box-shadow: -11px -9px 20px 0px rgba(0, 0, 0, 0.75);
+      box-shadow: -11px -9px 20px 0 rgb(0 0 0 / "75%");
     }
 
     &__title {
@@ -186,11 +179,16 @@ main {
       width: 100%;
       height: 200px;
       padding: 20px;
-      margin: 20px 0 20px 0;
+      margin: 20px 0;
     }
 
     &--popular {
-      @extend .article-list;
+      background-color: white;
+      padding: 10px;
+      margin-top: 20px;
+      display: block;
+      text-decoration: none;
+      color: #000;
       border-bottom: 1px solid lightgray;
 
       &__title {
@@ -207,7 +205,6 @@ main {
     }
   }
 }
-
 
 .footer {
   padding: 20px;
