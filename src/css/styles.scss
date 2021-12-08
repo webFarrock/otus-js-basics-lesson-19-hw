@@ -35,18 +35,52 @@ main {
     clear: both;
   }
 
-  .get-back{
+  .get-back {
     background-color: white;
     padding: 10px;
     margin-top: 20px;
     padding: 10px;
 
-    &__link{
+    &__link {
       font-size: 30px;
     }
   }
 
-  .article{
+  .feedback {
+    background-color: white;
+    padding: 10px;
+    margin-top: 20px;
+    text-decoration: none;
+    padding: 10px;
+    margin-bottom: 40px;
+
+    &__title {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    &__form {
+      outline: 1px solid grey;
+      padding: 10px;
+    }
+
+    &__label {
+      display: block;
+      margin-bottom: 18px;
+      font-size: 16px;
+    }
+
+    &__input {
+      display: block;
+      margin-top: 10px;
+
+      &[type=submit] {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .article {
     background-color: white;
     padding: 10px;
     margin-top: 20px;
@@ -71,15 +105,15 @@ main {
       margin: 20px 0 20px 0;
     }
 
-    &__text{
-      p{
+    &__text {
+      p {
         font-size: 18px;
         padding-bottom: 9px;
       }
     }
   }
 
-  .all-articles{
+  .all-articles {
     background-color: white;
     padding: 10px;
     margin-top: 20px;
@@ -88,23 +122,25 @@ main {
     margin-bottom: 40px;
     text-align: center;
 
-    &__link{
+    &__link {
       font-size: 30px;
     }
   }
-  .popular-block{
+
+  .popular-block {
     background-color: white;
     padding: 10px;
     margin-top: 20px;
     text-decoration: none;
 
     margin-bottom: 40px;
-    &__title{
+
+    &__title {
       font-size: 30px;
     }
   }
 
-  .about-block{
+  .about-block {
     background-color: white;
     padding: 10px;
     margin-top: 20px;
@@ -112,9 +148,10 @@ main {
     text-decoration: none;
     margin-bottom: 40px;
 
-    &__title{
+    &__title {
       font-size: 30px;
     }
+
     &__image {
       background-size: cover;
       width: 100%;
