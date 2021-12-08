@@ -9,8 +9,10 @@ body {
   text-align: center;
   background: white;
 
-  &__title {
+  &__title-link {
+    color: #000000;
     font-size: 40px;
+    text-decoration: none;
   }
 }
 

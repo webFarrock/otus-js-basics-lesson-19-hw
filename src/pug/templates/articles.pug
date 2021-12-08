@@ -1,0 +1,13 @@
+extends ../components/base
+
+block append variables
+  - var title = 'Список статей'
+
+block content
+    main
+        each article in articles
+            a.article-list(href=article.link)
+                h2.article-list__title=article.name
+                .article-list__date=article.date
+                .article-list__image(style={ 'background-image': 'url(' + article.img + ')' })
+                p=article.text
