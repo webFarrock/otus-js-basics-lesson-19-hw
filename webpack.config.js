@@ -7,7 +7,7 @@ const { resolve } = require("path");
 const glob = require("glob");
 
 const { NODE_ENV } = process.env;
-const pugTemplatesPath = "src/pug/templates";
+const pugTemplatesPath = "src/pug/templates/";
 const pugTemplates = glob.sync(`${pugTemplatesPath}/*.pug`);
 
 module.exports = {
