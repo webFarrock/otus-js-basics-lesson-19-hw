@@ -9,13 +9,14 @@ const glob = require("glob");
 const { NODE_ENV } = process.env;
 const pugTemplatesPath = "src/pug/templates/";
 const pugTemplates = glob.sync(`${pugTemplatesPath}/*.pug`);
+const publicPath = NODE_ENV === "production" ? "./" : "/";
 
 module.exports = {
   entry: resolve(__dirname, "src/index.js"),
   output: {
     filename: "bundle.js",
     path: resolve(`${__dirname}/dist`),
-    publicPath: "/",
+    publicPath,
     clean: true,
     environment: {
       arrowFunction: false,
