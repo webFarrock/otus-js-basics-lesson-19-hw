@@ -1,0 +1,73 @@
+{
+  "name": "otus-js-basics-lesson-19-hw",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "lint": "prettier --check . && eslint . && stylelint \"**/*.css\" && stylelint \"**/*.scss\"",
+    "lint:fix": "prettier --write . && eslint . --fix && stylelint \"**/*.css\" --fix && stylelint \"**/*.scss\" --fix",
+    "start": "webpack serve --mode development --open",
+    "build": "webpack build --node-env production"
+  },
+  "keywords": [],
+  "author": "Pavel Scheglov",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/plugin-transform-runtime": "^7.16.4",
+    "@babel/preset-env": "^7.16.4",
+    "@types/jest": "^27.0.3",
+    "autoprefixer": "^10.4.0",
+    "babel-jest": "^27.4.2",
+    "babel-loader": "^8.2.3",
+    "browser-sync": "^2.27.7",
+    "browser-sync-webpack-plugin": "^2.3.0",
+    "css-loader": "^6.5.1",
+    "css-minimizer-webpack-plugin": "^3.2.0",
+    "cssnano": "^5.0.12",
+    "eslint": "^8.4.1",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jest": "^25.3.0",
+    "glob": "^7.2.0",
+    "html-loader": "^3.0.1",
+    "html-webpack-plugin": "^5.5.0",
+    "html-webpack-pug-plugin": "^4.0.0",
+    "husky": "^7.0.4",
+    "jest": "^27.4.3",
+    "lint-staged": "^12.1.2",
+    "mini-css-extract-plugin": "^2.4.5",
+    "postcss": "^8.4.4",
+    "postcss-import": "^14.0.2",
+    "postcss-loader": "^6.2.1",
+    "postcss-preset-env": "^7.0.1",
+    "prettier": "^2.5.1",
+    "pug-html-loader": "^1.1.5",
+    "raw-loader": "^4.0.2",
+    "sass": "^1.44.0",
+    "sass-loader": "^12.3.0",
+    "style-loader": "^3.3.1",
+    "stylelint": "^14.1.0",
+    "stylelint-config-standard": "^24.0.0",
+    "stylelint-config-standard-scss": "^3.0.0",
+    "stylelint-scss": "^4.0.0",
+    "webpack": "^5.65.0",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.6.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write",
+      "eslint --cache --fix"
+    ],
+    "*.{css,md,yml}": "prettier --write"
+  },
+  "dependencies": {}
+}

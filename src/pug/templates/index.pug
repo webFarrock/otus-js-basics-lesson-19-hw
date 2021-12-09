@@ -1,0 +1,31 @@
+extends ../components/base
+
+block append variables
+  - var title = 'Главная страница'
+
+block content
+    main
+        .left-col
+          each article in articles
+              a.article-list(href=article.link)
+                  h2.article-list__title=article.name
+                  .article-list__date=article.date
+                  .article-list__image(style={ 'background-image': 'url(' + article.img + ')' })
+                  p=article.text
+
+          .all-articles
+              a.all-articles__link(href=articlesLink) All articles
+        .right-col
+            .about-block
+                h2.about-block__title About me
+                img.about-block__image(style={ 'background-image': 'url(//loremflickr.com/300/200)' })
+                .about-block__text
+                    p Some text about me in culpa qui officia deserunt mollit anim.
+
+            .popular-block
+                h2.popular-block__title Popular posts
+                    each article in articles
+                      a.article-list--popular(href=article.link)
+                          h2.article-list--popular__title=article.name
+                          h2.article-list--popular__date=article.date
+

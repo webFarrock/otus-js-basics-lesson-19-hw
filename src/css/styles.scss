@@ -1,0 +1,219 @@
+body {
+  padding: 20px;
+  background: #f1f1f1;
+}
+
+.header {
+  padding: 30px;
+  text-align: center;
+  background: white;
+
+  &__title-link {
+    color: #000;
+    font-size: 40px;
+    text-decoration: none;
+  }
+}
+
+main {
+  .left-col {
+    float: left;
+    width: 75%;
+  }
+
+  .right-col {
+    float: left;
+    width: 25%;
+    padding-left: 20px;
+  }
+
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  .get-back {
+    background-color: white;
+    padding: 10px;
+    margin-top: 20px;
+
+    &__link {
+      font-size: 30px;
+    }
+  }
+
+  .feedback {
+    background-color: white;
+    padding: 10px;
+    margin-top: 20px;
+    text-decoration: none;
+    margin-bottom: 40px;
+
+    &__title {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    &__form {
+      outline: 1px solid grey;
+      padding: 10px;
+    }
+
+    &__label {
+      display: block;
+      margin-bottom: 18px;
+      font-size: 16px;
+    }
+
+    &__input {
+      display: block;
+      margin-top: 10px;
+
+      &[type="submit"] {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .article {
+    background-color: white;
+    padding: 10px;
+    margin-top: 20px;
+    text-decoration: none;
+    margin-bottom: 40px;
+
+    &__title {
+      font-size: 30px;
+      padding-bottom: 10px;
+    }
+
+    &__date {
+      font-style: italic;
+    }
+
+    &__image {
+      background-size: cover;
+      width: 100%;
+      height: 200px;
+      padding: 20px;
+      margin: 20px 0;
+    }
+
+    &__text {
+      p {
+        font-size: 18px;
+        padding-bottom: 9px;
+      }
+    }
+  }
+
+  .all-articles {
+    background-color: white;
+    padding: 10px;
+    margin-top: 20px;
+    text-decoration: none;
+    margin-bottom: 40px;
+    text-align: center;
+
+    &__link {
+      font-size: 30px;
+    }
+  }
+
+  .popular-block {
+    background-color: white;
+    padding: 10px;
+    margin-top: 20px;
+    text-decoration: none;
+    margin-bottom: 40px;
+
+    &__title {
+      font-size: 30px;
+    }
+  }
+
+  .about-block {
+    background-color: white;
+    padding: 10px;
+    margin-top: 20px;
+    display: block;
+    text-decoration: none;
+    margin-bottom: 40px;
+
+    &__title {
+      font-size: 30px;
+    }
+
+    &__image {
+      background-size: cover;
+      width: 100%;
+      height: 200px;
+      margin: 20px 0;
+    }
+  }
+
+  .article-list {
+    background-color: white;
+    padding: 10px;
+    margin-top: 20px;
+    display: block;
+    text-decoration: none;
+    color: #000;
+
+    &:hover {
+      box-shadow: -11px -9px 20px 0 rgb(0 0 0 / "75%");
+    }
+
+    &__title {
+      font-size: 30px;
+      padding-bottom: 10px;
+    }
+
+    &__date {
+      font-style: italic;
+    }
+
+    &__image {
+      background-size: cover;
+      width: 100%;
+      height: 200px;
+      padding: 20px;
+      margin: 20px 0;
+    }
+
+    &--popular {
+      background-color: white;
+      padding: 10px;
+      margin-top: 20px;
+      display: block;
+      text-decoration: none;
+      color: #000;
+      border-bottom: 1px solid lightgray;
+
+      &__title {
+        display: inline;
+        font-size: 20px;
+        padding-bottom: 5px;
+        padding-right: 1em;
+      }
+
+      &__date {
+        display: inline;
+        font-style: italic;
+      }
+    }
+  }
+}
+
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+  margin-top: 20px;
+
+  &__feedback-link {
+    color: darkgray;
+    font-size: 40px;
+  }
+}
