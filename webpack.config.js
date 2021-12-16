@@ -1,8 +1,9 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
-const HtmlWebpackPugPlugin = require("html-webpack-pug-plugin");
 const BrowserSyncPlugin = require("browser-sync-webpack-plugin");
+const { HtmlWebpackSkipAssetsPlugin } = require("html-webpack-skip-assets-plugin");
+
 const { resolve } = require("path");
 const glob = require("glob");
 
@@ -12,9 +13,13 @@ const pugTemplates = glob.sync(`${pugTemplatesPath}/*.pug`);
 const publicPath = NODE_ENV === "production" ? "./" : "/";
 
 module.exports = {
-  entry: resolve(__dirname, "src/index.js"),
+  entry: {
+    bundle: resolve(__dirname, "src/index.js"),
+    slider: resolve(__dirname, "src/plugins/slider/index.js"),
+  },
+
   output: {
-    filename: "bundle.js",
+    filename: "[name].js",
     path: resolve(`${__dirname}/dist`),
     publicPath,
     clean: true,
@@ -58,15 +63,21 @@ module.exports = {
   },
   mode: NODE_ENV === "production" ? "production" : "development",
   plugins: [
-    ...pugTemplates.map(
-      (el) =>
-        new HtmlWebpackPlugin({
-          template: el,
-          filename: `${el.replace(pugTemplatesPath, "").replace(".pug", "")}.html`,
-        })
-    ),
-    new HtmlWebpackPugPlugin(),
+    ...pugTemplates.map((template) => {
+      const filename = `${template.replace(pugTemplatesPath, "").replace(".pug", "")}.html`;
+
+      switch (filename) {
+        case "index.html":
+          return new HtmlWebpackPlugin({ template, filename });
+
+        default: {
+          const excludeAssets = [/.?\/slider.[js|css]/, (asset) => asset.attributes && asset.attributes["x-skip"]];
+          return new HtmlWebpackPlugin({ template, filename, excludeAssets });
+        }
+      }
+    }),
     new MiniCssExtractPlugin(),
+    new HtmlWebpackSkipAssetsPlugin(),
     new BrowserSyncPlugin(
       {
         // browse to http://localhost:3000/ during development

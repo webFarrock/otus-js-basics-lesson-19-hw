@@ -69,5 +69,8 @@
     ],
     "*.{css,md,yml}": "prettier --write"
   },
-  "dependencies": {}
+  "dependencies": {
+    "-": "0.0.1",
+    "html-webpack-skip-assets-plugin": "^1.0.3"
+  }
 }
