@@ -1,0 +1,21 @@
+extends ../components/base
+
+block append variables
+  - var title = 'Обратная связь'
+
+
+block content
+    main
+        .feedback
+            .feedback__title Feedback form
+            form.feedback__form
+                label.feedback__label
+                    | E-mail:
+                    input.feedback__input(placeholder='example@mail.ru')
+
+                label.feedback__label
+                    | Your question:
+                    textarea.feedback__input()
+
+                label.feedback__label
+                    input.feedback__input(type='submit')
