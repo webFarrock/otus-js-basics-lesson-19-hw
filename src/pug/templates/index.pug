@@ -6,6 +6,7 @@ block append variables
 block content
     main
         .left-col
+          include ../components/slider
           each article in articles
               a.article-list(href=article.link)
                   h2.article-list__title=article.name
@@ -18,7 +19,7 @@ block content
         .right-col
             .about-block
                 h2.about-block__title About me
-                img.about-block__image(style={ 'background-image': 'url(//loremflickr.com/300/200)' })
+                div.about-block__image(style={ 'background-image': 'url(//loremflickr.com/300/200)' })
                 .about-block__text
                     p Some text about me in culpa qui officia deserunt mollit anim.
 
